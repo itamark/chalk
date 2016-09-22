@@ -12,7 +12,7 @@ import {
     View
 } from 'react-native';
 import {Navigation} from 'react-native-navigation';
-import ChatBox from './ChatBox';
+import ChatBox from './ChatBox/ChatBox';
 
 class react_native_navigation_bootstrap extends Component {
   render() {
