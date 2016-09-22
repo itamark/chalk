@@ -10,6 +10,7 @@ import {
     StyleSheet,
     Text,
     View,
+Image,
     TouchableOpacity,
 } from 'react-native';
 import {Navigation} from 'react-native-navigation';
@@ -26,6 +27,8 @@ class react_native_navigation_bootstrap extends Component {
   render() {
     return (
         <View style={styles.container}>
+          <Image source={require('./source/assets/logo.png')}></Image>
+          <Text style={styles.text}> firestack.ServerValue.TIMESTAMP</Text>
           <TouchableOpacity onPress={this.showChats.bind(this)}>
             <Text style={{color: 'blue'}}>Discover chats</Text>
           </TouchableOpacity>
@@ -34,12 +37,17 @@ class react_native_navigation_bootstrap extends Component {
   }
 }
 
+const images = '../assets/logo.png';
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    backgroundColor: '#134124'
+  },
+  text: {
+  color:'#ffffff'
   },
   welcome: {
     fontSize: 20,
@@ -56,6 +64,7 @@ const styles = StyleSheet.create({
 export default setup = () => {
   Navigation.registerComponent('ChatBox', () => ChatBox);
   Navigation.registerComponent('ChatList', () => ChatList);
+  Navigation.registerComponent('WelcomeBox', () => WelcomeBox);
   Navigation.registerComponent('react-native-navigation-bootstrap', () => react_native_navigation_bootstrap);
   Navigation.startSingleScreenApp({
     screen: {
