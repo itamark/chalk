@@ -17,11 +17,6 @@ import ChatList from './app/ChatList'
 import ChatBox from './ChatBox/ChatBox'
 import {Firestack} from 'react-native-firestack';
 
-const configurationOptions = {
-  debug: true
-};
-const firestack = new Firestack(configurationOptions);
-firestack.on('debug', msg => console.log('Received debug message', msg))
 
 class react_native_navigation_bootstrap extends Component {
   showChats(){
