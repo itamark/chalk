@@ -17,6 +17,7 @@ var TestMessages = [{
        name: 'Alex',
        avatar: 'http://vignette4.wikia.nocookie.net/marine/images/0/07/Ocean-sand-sea-star.jpg/revision/latest?cb=20130821070250',
      }
+   }
 ]
 
 export { TestMessages as default };

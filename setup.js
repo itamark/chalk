@@ -14,6 +14,7 @@ import {
 } from 'react-native';
 import {Navigation} from 'react-native-navigation';
 import ChatList from './app/ChatList'
+import ChatBox from './ChatBox/ChatBox'
 
 class react_native_navigation_bootstrap extends Component {
   showChats(){
@@ -53,6 +54,7 @@ const styles = StyleSheet.create({
 })
 
 export default setup = () => {
+  Navigation.registerComponent('ChatBox', () => ChatBox); 
   Navigation.registerComponent('ChatList', () => ChatList);  
   Navigation.registerComponent('react-native-navigation-bootstrap', () => react_native_navigation_bootstrap);  
   Navigation.startSingleScreenApp({

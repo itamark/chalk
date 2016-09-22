@@ -17,11 +17,10 @@ class ChatBox extends React.Component{
   render() {
     debugger;
     return (
-      <View>
         <GiftedChat
+          style={{flex:1}}
           messages={TestMessages}
           onSend={this.onSend}/>
-      </View>
     )
   }
 }

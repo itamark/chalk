@@ -36,7 +36,10 @@ export default class ChatList extends Component {
   }
 
   chatItemClick(){
-
+    this.props.navigator.push({
+      screen: 'ChatBox',
+      title: 'ChatBox'
+    });
   }
 
   render() {
@@ -46,7 +49,7 @@ export default class ChatList extends Component {
           dataSource={this.state.dataSource}
           enableEmptySections={true}
           renderRow={(dataRow) => (
-            <TouchableOpacity onPress={this.chatItemClick}>
+            <TouchableOpacity onPress={this.chatItemClick.bind(this)}>
               <View style={{padding:10}}>
                 <Text>{dataRow.name}</Text>
               </View>
