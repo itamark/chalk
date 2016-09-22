@@ -12,22 +12,12 @@ import {
     View
 } from 'react-native';
 import {Navigation} from 'react-native-navigation';
+import ChatBox from './ChatBox';
 
 class react_native_navigation_bootstrap extends Component {
   render() {
     return (
-        <View style={styles.container}>
-          <Text style={styles.welcome}>
-            Welcome to React Native!
-          </Text>
-          <Text style={styles.instructions}>
-            To get started, edit index.ios.js
-          </Text>
-          <Text style={styles.instructions}>
-            Press Cmd+R to reload,{'\n'}
-            Cmd+D or shake for dev menu
-          </Text>
-        </View>
+        <ChatBox />
     );
   }
 }
@@ -52,7 +42,7 @@ const styles = StyleSheet.create({
 })
 
 export default setup = () => {
-  Navigation.registerComponent('react-native-navigation-bootstrap', () => react_native_navigation_bootstrap);  
+  Navigation.registerComponent('react-native-navigation-bootstrap', () => react_native_navigation_bootstrap);
   Navigation.startSingleScreenApp({
     screen: {
       screen: 'react-native-navigation-bootstrap',
@@ -60,4 +50,3 @@ export default setup = () => {
     }
   });
 }
-
