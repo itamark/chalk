@@ -1,5 +1,4 @@
 apply plugin: "com.android.application"
-apply plugin: 'com.google.gms.google-services'
 
 import com.android.build.OutputFile
 
@@ -88,7 +87,7 @@ android {
     buildToolsVersion "23.0.1"
 
     defaultConfig {
-        applicationId "com.react_native_navigation_chalk"
+        applicationId "com.react_native_navigation_bootstrap"
         minSdkVersion 16
         targetSdkVersion 22
         versionCode 1
@@ -127,7 +126,6 @@ android {
 }
 
 dependencies {
-    compile project(':react-native-firestack')
     compile fileTree(dir: "libs", include: ["*.jar"])
     compile "com.android.support:appcompat-v7:23.0.1"
     compile "com.facebook.react:react-native:+"  // From node_modules

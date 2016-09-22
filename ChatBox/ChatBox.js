@@ -20,7 +20,7 @@ class ChatBox extends React.Component{
     };
   }
   componentDidMount() {
-    firebaseDb.ref().child(`chats/${this.props.channelId}`).on('value', snap => {
+    this.ref = firebaseDb.ref().child(`chats/${this.props.channelId}`).on('value', snap => {
       let messages = [];
       snap.forEach(message => {
         messages.push({_id:message.key, text: message.val().text});
