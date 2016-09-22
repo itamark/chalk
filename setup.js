@@ -33,6 +33,7 @@ class react_native_navigation_bootstrap extends Component {
   render() {
     return (
         <View style={styles.container}>
+          <Text> firestack.ServerValue.TIMESTAMP</Text>
           <TouchableOpacity onPress={this.showChats.bind(this)}>
             <Text style={{color: 'blue'}}>Discover chats</Text>
           </TouchableOpacity>
