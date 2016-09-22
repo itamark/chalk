@@ -15,7 +15,7 @@ var TestMessages = [{
      user: {
        _id: 3,
        name: 'Alex',
-       avatar: 'http://vignette4.wikia.nocookie.net/marine/images/0/07/Ocean-sand-sea-star.jpg/revision/latest?cb=20130821070250',
+       avatar: 'https://pbs.twimg.com/profile_images/750269763729981440/q_xQ4oVg_400x400.jpg',
      }
    }
 ]
