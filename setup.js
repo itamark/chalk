@@ -29,7 +29,7 @@ class react_native_navigation_bootstrap extends Component {
           <TouchableOpacity onPress={this.showChats.bind(this)}>
             <Text style={{color: 'blue'}}>Discover chats</Text>
           </TouchableOpacity>
-        </View>        
+        </View>
     );
   }
 }
@@ -54,9 +54,9 @@ const styles = StyleSheet.create({
 })
 
 export default setup = () => {
-  Navigation.registerComponent('ChatBox', () => ChatBox); 
-  Navigation.registerComponent('ChatList', () => ChatList);  
-  Navigation.registerComponent('react-native-navigation-bootstrap', () => react_native_navigation_bootstrap);  
+  Navigation.registerComponent('ChatBox', () => ChatBox);
+  Navigation.registerComponent('ChatList', () => ChatList);
+  Navigation.registerComponent('react-native-navigation-bootstrap', () => react_native_navigation_bootstrap);
   Navigation.startSingleScreenApp({
     screen: {
       screen: 'react-native-navigation-bootstrap',

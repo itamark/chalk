@@ -8,6 +8,9 @@ import {
     ListView,
 } from 'react-native';
 
+import firebase from 'firebase';
+import { firebaseApp, firebaseAuth, firebaseDb } from '../firebase';
+
 export default class ChatList extends Component {
   constructor(props) {
     super(props);
@@ -22,23 +25,31 @@ export default class ChatList extends Component {
   componentDidMount() {
     const chats = [{
       name: 'Wix Hackathon',
-      owner: '1111'      
+      owner: '1111',
+      channel: '1'      
     },{
       name: 'Boring',
-      owner: '2'      
+      owner: '2'  ,
+      channel: '2'      
     },{
       name: 'Dringing beer',
-      owner: '3'      
+      owner: '3'   ,
+      channel: '3'     
     }];
     this.setState({
-        dataSource: this.state.dataSource.cloneWithRows(chats)
-      })
+      dataSource: this.state.dataSource.cloneWithRows(chats)
+    })
+
+    chats.forEach((chat) => {
+      
+    });
   }
 
   chatItemClick(){
     this.props.navigator.push({
       screen: 'ChatBox',
-      title: 'ChatBox'
+      title: 'ChatBox',
+      passProps: {channelId: 'test'}
     });
   }
 
