@@ -10,7 +10,7 @@ import {
     StyleSheet,
     Text,
     View,
-Image,
+    Image,
     TouchableOpacity,
 } from 'react-native';
 import {Navigation} from 'react-native-navigation';
@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
 export default setup = () => {
   Navigation.registerComponent('ChatBox', () => ChatBox);
   Navigation.registerComponent('ChatList', () => ChatList);
-  Navigation.registerComponent('WelcomeBox', () => WelcomeBox);
+  //Navigation.registerComponent('WelcomeBox', () => WelcomeBox);
   Navigation.registerComponent('react-native-navigation-bootstrap', () => react_native_navigation_bootstrap);
   Navigation.startSingleScreenApp({
     screen: {

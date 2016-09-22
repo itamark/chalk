@@ -12,6 +12,8 @@ import GeoFire from 'geofire';
 import firebase from 'firebase';
 import { firebaseApp, firebaseAuth, firebaseDb } from '../firebase';
 import Prompt from 'react-native-prompt';
+import base64 from 'base-64'
+import utf8 from 'utf8'
 
 const geoFire = new GeoFire(firebaseDb.ref().child('rooms'));
 
@@ -38,7 +40,9 @@ export default class ChatList extends Component {
     const rowHasChanged = (r1, r2) => r1 !== r2 //(r1, r2) => r1.id !== r2.id}
     const ds = new ListView.DataSource({rowHasChanged});
     this.state = {
-      dataSource: ds
+      dataSource: ds,
+      chats: [],
+      promptVisible: false
     };
   }
 
@@ -51,46 +55,33 @@ export default class ChatList extends Component {
   }
 
   componentDidMount() {
+    const _this= this;
     navigator.geolocation.getCurrentPosition(
       (position) => {
-        console.log('componentDidMount', position);
+        console.log('componentDidMount', [position.coords.latitude, position.coords.longitude]);
         const geoQuery = geoFire.query({
-          center: [position.coords.longitude, position.coords.latitude],
+          center: [position.coords.latitude, position.coords.longitude],
           radius: 1000
+        });
+        var onKeyEnteredRegistration = geoQuery.on("key_entered", function(key, location, distance) {
+          var roomIdObject = JSON.parse(base64.decode(key));
+          const chats = _this.state.chats.concat([{name: roomIdObject.name, key, distance}]);
+          _this.setState({
+            chats,
+            dataSource: _this.state.dataSource.cloneWithRows(chats)
+          })
         });
       },
       (error) => alert(error),
       {enableHighAccuracy: false, timeout: 10000, maximumAge: 5000000}
     );
-
-    const chats = [{
-      name: 'Wix Hackathon',
-      owner: '1111',
-      channel: '1'      
-    },{
-      name: 'Boring',
-      owner: '2'  ,
-      channel: '2'      
-    },{
-      name: 'Dringing beer',
-      owner: '3'   ,
-      channel: '3'     
-    }];
-    this.setState({
-      dataSource: this.state.dataSource.cloneWithRows(chats),
-      promptVisible: false
-    })
-
-    chats.forEach((chat) => {
-      
-    });
   }
 
-  chatItemClick(){
+  chatItemClick(dataRow){
     this.props.navigator.push({
       screen: 'ChatBox',
-      title: 'ChatBox',
-      passProps: {channelId: 'test'}
+      title: dataRow.name,
+      passProps: {channelId: dataRow.key}
     });
   }
 
@@ -98,8 +89,12 @@ export default class ChatList extends Component {
     this.setState({ promptVisible: false})
     navigator.geolocation.getCurrentPosition(
       (position) => {
-        console.log('set position', position);
-        geoFire.set(name,  [position.coords.longitude, position.coords.latitude]);
+        console.log('componentDidMount', [position.coords.latitude, position.coords.longitude]);
+
+        var roomIdObject = {name, rnd: Math.floor((Math.random() * 1000) + 1)};
+        var roomId = base64.encode(JSON.stringify(roomIdObject));
+
+        geoFire.set(roomId, [position.coords.latitude, position.coords.longitude]);
       },
       (error) => alert(error),
       {enableHighAccuracy: false, timeout: 10000, maximumAge: 5000000}
@@ -113,9 +108,9 @@ export default class ChatList extends Component {
           dataSource={this.state.dataSource}
           enableEmptySections={true}
           renderRow={(dataRow) => (
-            <TouchableOpacity onPress={this.chatItemClick.bind(this)}>
+            <TouchableOpacity onPress={()=> this.chatItemClick(dataRow) }>
               <View style={{padding:10}}>
-                <Text>{dataRow.name}</Text>
+                <Text>{dataRow.name} - {dataRow.distance}meters away</Text>
               </View>
             </TouchableOpacity>
           )}
@@ -132,5 +127,8 @@ export default class ChatList extends Component {
 }
 
 const styles = StyleSheet.create({
-  container:{}
+  container:{
+    flex: 1
+
+  }
 });
