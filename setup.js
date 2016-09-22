@@ -1,4 +1,3 @@
-@@ -1,65 +0,0 @@
 /**
  * Sample React Native App
  * https://github.com/facebook/react-native
