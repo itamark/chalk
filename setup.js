@@ -20,7 +20,7 @@ class react_native_navigation_bootstrap extends Component {
   showChats(){
     this.props.navigator.push({
       screen: 'ChatList',
-      title: 'Pushed Screen'
+      title: 'Pushed Screen test'
     });
   }
   render() {
