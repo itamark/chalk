@@ -9,15 +9,27 @@ import {
     AppRegistry,
     StyleSheet,
     Text,
-    View
+    View,
+    TouchableOpacity,
 } from 'react-native';
 import {Navigation} from 'react-native-navigation';
-import ChatBox from './source/ChatBox/ChatBox';
+import ChatList from './app/ChatList'
+import ChatBox from './ChatBox/ChatBox'
 
 class react_native_navigation_bootstrap extends Component {
+  showChats(){
+    this.props.navigator.push({
+      screen: 'ChatList',
+      title: 'Pushed Screen'
+    });
+  }
   render() {
     return (
-        <ChatBox />
+        <View style={styles.container}>
+          <TouchableOpacity onPress={this.showChats.bind(this)}>
+            <Text style={{color: 'blue'}}>Discover chats</Text>
+          </TouchableOpacity>
+        </View>        
     );
   }
 }
@@ -42,7 +54,9 @@ const styles = StyleSheet.create({
 })
 
 export default setup = () => {
-  Navigation.registerComponent('react-native-navigation-bootstrap', () => react_native_navigation_bootstrap);
+  Navigation.registerComponent('ChatBox', () => ChatBox); 
+  Navigation.registerComponent('ChatList', () => ChatList);  
+  Navigation.registerComponent('react-native-navigation-bootstrap', () => react_native_navigation_bootstrap);  
   Navigation.startSingleScreenApp({
     screen: {
       screen: 'react-native-navigation-bootstrap',

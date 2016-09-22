@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "1010088990833",
+    "firebase_url": "https://chalk-c68a3.firebaseio.com",
+    "project_id": "chalk-c68a3",
+    "storage_bucket": "chalk-c68a3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1010088990833:android:2ec9ccf94d7a7c7b",
+        "android_client_info": {
+          "package_name": "com.react_native_navigation_chalk"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1010088990833-gclvk4rlkquh2u338nel7tl6llu0q6hr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBLr6rW1nCW0vHH0mre8si-xod0BwN0P3g"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
