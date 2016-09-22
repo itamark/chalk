@@ -15,7 +15,7 @@ class ChatBox extends React.Component{
         <GiftedChat
           style={{flex:1}}
           messages={TestMessages}
-          onSend={this.onSend}/>
+          onSend={this.onSend} />
     )
   }
 }
