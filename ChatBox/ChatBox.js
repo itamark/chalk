@@ -36,7 +36,6 @@ class ChatBox extends React.Component{
   }
 
   render() {
-    debugger;
     return (
         <GiftedChat
           style={{flex:1}}
