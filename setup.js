@@ -9,25 +9,26 @@ import {
     AppRegistry,
     StyleSheet,
     Text,
-    View
+    View,
+    TouchableOpacity,
 } from 'react-native';
 import {Navigation} from 'react-native-navigation';
+import ChatList from './app/ChatList'
 
 class react_native_navigation_bootstrap extends Component {
+  showChats(){
+    this.props.navigator.push({
+      screen: 'ChatList',
+      title: 'Pushed Screen'
+    });
+  }
   render() {
     return (
         <View style={styles.container}>
-          <Text style={styles.welcome}>
-            Welcome to React Native!
-          </Text>
-          <Text style={styles.instructions}>
-            To get started, edit index.ios.js
-          </Text>
-          <Text style={styles.instructions}>
-            Press Cmd+R to reload,{'\n'}
-            Cmd+D or shake for dev menu
-          </Text>
-        </View>
+          <TouchableOpacity onPress={this.showChats.bind(this)}>
+            <Text style={{color: 'blue'}}>Discover chats</Text>
+          </TouchableOpacity>
+        </View>        
     );
   }
 }
@@ -52,6 +53,7 @@ const styles = StyleSheet.create({
 })
 
 export default setup = () => {
+  Navigation.registerComponent('ChatList', () => ChatList);  
   Navigation.registerComponent('react-native-navigation-bootstrap', () => react_native_navigation_bootstrap);  
   Navigation.startSingleScreenApp({
     screen: {
