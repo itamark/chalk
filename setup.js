@@ -18,7 +18,7 @@ import ChatBox from './ChatBox/ChatBox'
 
 class react_native_navigation_bootstrap extends Component {
   showChats(){
-    this.props.navigator.push({
+    this.props.navigator.resetTo({
       screen: 'ChatList',
       title: 'Pushed Screen'
     });
