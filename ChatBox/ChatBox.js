@@ -14,7 +14,6 @@ import { firebaseApp, firebaseAuth, firebaseDb } from '../firebase';
 class ChatBox extends React.Component{
   constructor(props) {
     super(props);
-
     this.state = {
       messages: []
     };
@@ -23,16 +22,28 @@ class ChatBox extends React.Component{
     firebaseDb.ref().child(`chats/${this.props.channelId}`).on('value', snap => {
       let messages = [];
       snap.forEach(message => {
-        messages.push({_id:message.key, text: message.val().text});
+        messages.push({
+          _id:message.key,
+          text: message.val().text,
+          createdAt: message.val().createdAt,
+          user: {_id: message.val().username}
+        });
       });
       console.log(messages)
-      this.setState({messages});
+      this.setState({messages: messages.reverse()});
     });
   }
 
   onSend(message) {
     console.log(message);
-    firebaseDb.ref().child(`chats/${this.props.channelId}`).push({name: 'alex', text:message[0].text })
+    firebaseDb.ref().child(`chats/${this.props.channelId}`).push({
+      name: 'alex',
+      text:message[0].text,
+      createdAt: new Date(),
+      _user: {
+        _id: 'yoniweisbrod'
+      }
+    })
   }
 
   render() {
