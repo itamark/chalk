@@ -12,12 +12,14 @@ import {
     View,
     Image,
     TouchableOpacity,
-    TextInput
+    TextInput,
+    CameraRoll
 } from 'react-native';
 import {Navigation} from 'react-native-navigation';
 import ChatList from './app/ChatList'
 import CameraPicker from './app/CameraPicker'
 import ChatBox from './ChatBox/ChatBox'
+
 
 
 class react_native_navigation_bootstrap extends Component {
@@ -29,10 +31,11 @@ class react_native_navigation_bootstrap extends Component {
   }
 
   choosePicture(){
-    Navigation.showModal({
+    this.props.navigator.push({
       screen: 'CameraPicker',
-      title: 'Camera'
-  });
+      title: 'Choos avatar',
+      passProps: {onAvatarSelected: (avatar) => this.setState({avatar})}
+    });
 
    
   }
@@ -43,7 +46,7 @@ class react_native_navigation_bootstrap extends Component {
 
         screen: 'ChatList',
         title: 'Nearby chalks',
-        passProps: {uid: Date.now(), name: this.state.name, avatar: 'https://freeiconshop.com/files/edd/person-flat.png'}
+        passProps: {uid: Date.now(), name: this.state.name, avatar: this.state.avatar}
 
     });
   }
