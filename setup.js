@@ -101,6 +101,8 @@ class react_native_navigation_bootstrap extends Component {
     export
     default
     setup = () => {
+      console.disableYellowBox = true;
+      
         Navigation.registerComponent('ChatBox', () => ChatBox);
         Navigation.registerComponent('ChatList', () => ChatList);
         Navigation.registerComponent('CameraPicker', () => CameraPicker);
