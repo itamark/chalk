@@ -6,10 +6,9 @@ import com.facebook.react.ReactPackage;
 import com.reactnativenavigation.NavigationApplication;
 
 import java.util.List;
-import com.imagepicker.ImagePickerPackage; // <-- add this import
 import java.util.Arrays;
 import com.airbnb.android.react.maps.MapsPackage;
-import com.burnweb.rnpermissions.RNPermissionsPackage;
+import com.wix.RNCameraKit.RNCameraKitPackage;
 
 public class MainApplication extends NavigationApplication {
 
@@ -22,9 +21,8 @@ public class MainApplication extends NavigationApplication {
   @Override
   public List<ReactPackage> createAdditionalReactPackages() {
     return Arrays.<ReactPackage>asList(
-            new ImagePickerPackage(),
             new MapsPackage(),
-            new RNPermissionsPackage()
+            new RNCameraKitPackage()    
         );
   }
 
