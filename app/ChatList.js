@@ -6,6 +6,7 @@ import {
     View,
     TouchableOpacity,
     ListView,
+    Dimensions,
 } from 'react-native';
 
 import GeoFire from 'geofire';
@@ -13,7 +14,7 @@ import firebase from 'firebase';
 import { firebaseApp, firebaseAuth, firebaseDb } from '../firebase';
 import Prompt from 'react-native-prompt';
 import base64 from 'base-64'
-import utf8 from 'utf8'
+import MapView from 'react-native-maps';
 
 const geoFire = new GeoFire(firebaseDb.ref().child('rooms'));
 
@@ -22,7 +23,7 @@ export default class ChatList extends Component {
   static navigatorButtons = {
     rightButtons: [
       {
-        title: 'New', // for a textual button, provide the button title (label)
+        title: 'Create', // for a textual button, provide the button title (label)
         id: 'new', // id for this button, given in onNavigatorEvent(event) to help understand which button was clicked
         testID: 'e2e_rules', // optional, used to locate this view in end-to-end tests
         disabled: false, // optional, used to disable the button (appears faded and doesn't interact)
@@ -34,12 +35,27 @@ export default class ChatList extends Component {
 
   constructor(props) {
     super(props);
+    console.log('props', this.props)
+
+    const screen = Dimensions.get('window');
+    const ASPECT_RATIO = screen.width / screen.height;
+    const LATITUDE_DELTA = 0.03;
+    const LONGITUDE_DELTA = LATITUDE_DELTA * ASPECT_RATIO;
 
     this.props.navigator.setOnNavigatorEvent(this.onNavigatorEvent.bind(this));
 
     const rowHasChanged = (r1, r2) => r1 !== r2 //(r1, r2) => r1.id !== r2.id}
     const ds = new ListView.DataSource({rowHasChanged});
+
     this.state = {
+      region: {
+        latitude: 32.0868,
+        longitude: 34.7898,
+        latitudeDelta: LATITUDE_DELTA,
+        longitudeDelta: LONGITUDE_DELTA,
+      },
+      LATITUDE_DELTA,
+      LONGITUDE_DELTA,
       dataSource: ds,
       chats: [],
       promptVisible: false
@@ -59,18 +75,29 @@ export default class ChatList extends Component {
     navigator.geolocation.getCurrentPosition(
       (position) => {
         console.log('componentDidMount', [position.coords.latitude, position.coords.longitude]);
-        const geoQuery = geoFire.query({
+        this.setState({
+          region: {
+            latitude: position.coords.latitude,
+            longitude: position.coords.longitude,
+            latitudeDelta: this.state.region.latitudeDelta,
+            longitudeDelta: this.state.region.longitudeDelta,
+          }
+        });
+        this.geoQuery = geoFire.query({
           center: [position.coords.latitude, position.coords.longitude],
           radius: 1000
         });
-        var onKeyEnteredRegistration = geoQuery.on("key_entered", function(key, location, distance) {
+        var _this=this;
+        this.geoQuery.on("key_entered", function(key, location, distance) {
+          console.log('key_entered', key);
           var roomIdObject = JSON.parse(base64.decode(key));
-          const chats = _this.state.chats.concat([{name: roomIdObject.name, key, distance}]);
+          const chats = _this.state.chats.concat([{name: roomIdObject.name, key, location, distance}]);
           _this.setState({
             chats,
             dataSource: _this.state.dataSource.cloneWithRows(chats)
           })
         });
+        
       },
       (error) => alert(error),
       {enableHighAccuracy: false, timeout: 10000, maximumAge: 5000000}
@@ -81,7 +108,7 @@ export default class ChatList extends Component {
     this.props.navigator.push({
       screen: 'ChatBox',
       title: dataRow.name,
-      passProps: {channelId: dataRow.key}
+      passProps: {channelId: dataRow.key, uid: this.props.uid, name: this.props.name, avatar: this.props.avatar}
     });
   }
 
@@ -101,16 +128,55 @@ export default class ChatList extends Component {
     );
   }
 
+  onRegionChange(region) {
+    return;
+    console.log('onRegionChange', [region.latitude, region.longitude])
+    this.setState({ region });
+    this.geoQuery.updateCriteria({
+      center: [region.latitude, region.longitude],
+    });
+  }
+
   render() {
     return (
       <View style={styles.container}>
+      <MapView
+          style={styles.chatMap}
+          showsPointsOfInterest={false}
+          toolbarEnabled={false}
+          showsCompass={false}
+          showsBuildings={false}
+          onRegionChange={this.onRegionChange.bind(this)}
+          region={this.state.region}
+          initialRegion={this.state.region}
+
+          >
+
+          {this.state.chats.map((chat, index) => (
+            <MapView.Marker
+              key={chat.key}
+              coordinate={{latitude:chat.location[0], longitude:chat.location[1]}}
+              title={chat.name}
+              pinColor='#00cae9'
+              onCalloutPress={() => this.chatItemClick(chat)}
+              onPress={()=> this._list.scrollTo({y:index*this._listItemHeight})}
+            >
+            
+            </MapView.Marker>
+          ))}
+
+        </MapView>
         <ListView
+          ref={(c) => this._list = c}
+          style={styles.chatList}
           dataSource={this.state.dataSource}
           enableEmptySections={true}
+          onLayout={(e) => this._listItemHeight = e.nativeEvent.layout.height}
           renderRow={(dataRow) => (
             <TouchableOpacity onPress={()=> this.chatItemClick(dataRow) }>
-              <View style={{padding:10}}>
-                <Text>{dataRow.name} - {dataRow.distance}meters away</Text>
+              <View style={{padding:10, borderBottomWidth: StyleSheet.hairlineWidth,
+    borderBottomColor: '#b2b2b2', flexDirection: 'column' }}>
+                <Text style={{fontSize:20}}>{dataRow.name}</Text><Text style={{fontSize:14}}>{Math.round(dataRow.distance)} mtrs away</Text>
               </View>
             </TouchableOpacity>
           )}
@@ -128,7 +194,13 @@ export default class ChatList extends Component {
 
 const styles = StyleSheet.create({
   container:{
+    flex: 1,
+    flexDirection: 'column'
+  },
+  chatList: {
+    flex: 1,
+  },
+  chatMap: {
     flex: 1
-
-  }
+  },
 });

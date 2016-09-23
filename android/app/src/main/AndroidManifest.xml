@@ -7,6 +7,10 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-feature android:name="android.hardware.camera" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false"/>
 
     <uses-sdk
         android:minSdkVersion="16"
@@ -20,6 +24,9 @@
       android:theme="@style/AppTheme"
       tools:replace="android:theme"
       >
+      <meta-data
+        android:name="com.google.android.geo.API_KEY"
+        android:value="AIzaSyAB7OF0Yti4WBafD7tffSalxPrKIO8o5vw"/>
       <activity
         android:name=".MainActivity"
         android:label="@string/app_name"

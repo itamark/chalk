@@ -6,6 +6,10 @@ import com.facebook.react.ReactPackage;
 import com.reactnativenavigation.NavigationApplication;
 
 import java.util.List;
+import com.imagepicker.ImagePickerPackage; // <-- add this import
+import java.util.Arrays;
+import com.airbnb.android.react.maps.MapsPackage;
+import com.burnweb.rnpermissions.RNPermissionsPackage;
 
 public class MainApplication extends NavigationApplication {
 
@@ -17,9 +21,11 @@ public class MainApplication extends NavigationApplication {
   @NonNull
   @Override
   public List<ReactPackage> createAdditionalReactPackages() {
-    // Add the packages you require here.
-    // No need to add RnnPackage and MainReactPackage
-    return null;
+    return Arrays.<ReactPackage>asList(
+            new ImagePickerPackage(),
+            new MapsPackage(),
+            new RNPermissionsPackage()
+        );
   }
 
 }

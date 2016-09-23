@@ -14,6 +14,7 @@ import { firebaseApp, firebaseAuth, firebaseDb } from '../firebase';
 class ChatBox extends React.Component{
   constructor(props) {
     super(props);
+    console.log('props', props)
     this.state = {
       messages: []
     };
@@ -26,7 +27,7 @@ class ChatBox extends React.Component{
           _id:message.key,
           text: message.val().text,
           createdAt: message.val().createdAt,
-          user: {_id: message.val().username}
+          user: message.val()._user
         });
       });
       console.log(messages)
@@ -41,7 +42,9 @@ class ChatBox extends React.Component{
       text:message[0].text,
       createdAt: new Date(),
       _user: {
-        _id: 'yoniweisbrod'
+        _id: this.props.uid,
+        name: this.props.name,
+        avatar: this.props.avatar
       }
     })
   }
@@ -51,7 +54,12 @@ class ChatBox extends React.Component{
         <GiftedChat
           style={{flex:1}}
           messages={this.state.messages}
-          onSend={this.onSend.bind(this)}/>
+          onSend={this.onSend.bind(this)}
+          user={{
+          _id: this.props.uid,
+          name: this.props.name,
+          avatar: this.props.avatar
+          }}/>
     )
   }
 }
