@@ -89,7 +89,7 @@ android {
     defaultConfig {
         applicationId "com.react_native_navigation_bootstrap"
         minSdkVersion 16
-        targetSdkVersion 23
+        targetSdkVersion 22
         versionCode 1
         versionName "1.0"
         ndk {
@@ -130,9 +130,8 @@ dependencies {
     compile "com.android.support:appcompat-v7:23.0.1"
     compile "com.facebook.react:react-native:+"  // From node_modules
     compile project(":react-native-navigation")
-    compile project(':react-native-image-picker')
     compile project(':react-native-maps')
-    compile project(':RNPermissionsModule')
+    compile project(":rncamerakit")
 
 }
 

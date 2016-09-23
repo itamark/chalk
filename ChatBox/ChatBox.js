@@ -6,7 +6,6 @@ import {
     View
 } from 'react-native';
 import { GiftedChat } from 'react-native-gifted-chat';
-import TestMessages from './TestMessages';
 
 import firebase from 'firebase';
 import { firebaseApp, firebaseAuth, firebaseDb } from '../firebase';
@@ -18,6 +17,9 @@ class ChatBox extends React.Component{
     this.state = {
       messages: []
     };
+  }
+  componentWillUnmount(){
+    firebaseDb.ref().child(`chats/${this.props.channelId}`).off('value', ref);
   }
   componentDidMount() {
     this.ref = firebaseDb.ref().child(`chats/${this.props.channelId}`).on('value', snap => {
