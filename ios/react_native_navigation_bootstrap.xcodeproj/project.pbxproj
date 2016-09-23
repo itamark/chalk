@@ -5,6 +5,7 @@
 	};
 	objectVersion = 46;
 	objects = {
+
 /* Begin PBXBuildFile section */
 		00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302AC1ABCB8CE00DB3ED1 /* libRCTActionSheet.a */; };
 		00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302BA1ABCB90400DB3ED1 /* libRCTGeolocation.a */; };
@@ -21,12 +22,11 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		140ED2AC1D01E1AD002B40FF /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
+		63E840E4B4374D7182927970 /* libRNFetchBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 69F2115B5EE4467E90831715 /* libRNFetchBlob.a */; };
+		6B581334EF0F4EE48AE2B9C7 /* libAirMaps.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F6441079ABE4D31A3B68B07 /* libAirMaps.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		C00407DB1D8EDB32005B3693 /* libReactNativeControllers.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C00407DA1D8EDB28005B3693 /* libReactNativeControllers.a */; };
-		63E840E4B4374D7182927970 /* libRNFetchBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 69F2115B5EE4467E90831715 /* libRNFetchBlob.a */; };
 		CCD4871C67EA40CFB5777666 /* libRNImagePicker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C6696708A24040EBBE738280 /* libRNImagePicker.a */; };
-		6B581334EF0F4EE48AE2B9C7 /* libAirMaps.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F6441079ABE4D31A3B68B07 /* libAirMaps.a */; };
-		36ADE743DD9F4FD992222F6E /* libReactNativeNavigation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A633F498F8C04C54BCCDC045 /* libReactNativeNavigation.a */; };
 		D550BF4B22414A04AB9C7386 /* libReactNativePermissions.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 60FF9EBDB54B4D34BC2E5DC7 /* libReactNativePermissions.a */; };
 /* End PBXBuildFile section */
 
@@ -94,6 +94,34 @@
 			remoteGlobalIDString = 83CBBA2E1A601D0E00E9B192;
 			remoteInfo = React;
 		};
+		4E70C2EF1D951236005D181F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 78C3A6CBD9894925914F609C /* RNFetchBlob.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A15C300E1CD25C330074CB35;
+			remoteInfo = RNFetchBlob;
+		};
+		4E70C2F41D951236005D181F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C6FF2A6130D34802B2D08FC2 /* ReactNativePermissions.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9D23B34F1C767B80008B4819;
+			remoteInfo = ReactNativePermissions;
+		};
+		4E70C2F91D951236005D181F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9ED249FBDB39457F9C5863B3 /* AirMaps.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 11FA5C511C4A1296003AC2EE;
+			remoteInfo = AirMaps;
+		};
+		4E70C2FE1D951236005D181F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EAF891FE0FFA452A999C0391 /* RNImagePicker.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 014A3B5C1C6CF33500B6D375;
+			remoteInfo = RNImagePicker;
+		};
 		78C398B81ACF4ADC00677621 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */;
@@ -127,6 +155,7 @@
 		00E356EE1AD99517003FC87E /* react_native_navigation_bootstrapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = react_native_navigation_bootstrapTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* react_native_navigation_bootstrapTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = react_native_navigation_bootstrapTests.m; sourceTree = "<group>"; };
+		0F6441079ABE4D31A3B68B07 /* libAirMaps.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libAirMaps.a; sourceTree = "<group>"; };
 		139105B61AF99BAD00B5F7CC /* RCTSettings.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTSettings.xcodeproj; path = "../node_modules/react-native/Libraries/Settings/RCTSettings.xcodeproj"; sourceTree = "<group>"; };
 		139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTWebSocket.xcodeproj; path = "../node_modules/react-native/Libraries/WebSocket/RCTWebSocket.xcodeproj"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* react_native_navigation_bootstrap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = react_native_navigation_bootstrap.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -137,19 +166,16 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = react_native_navigation_bootstrap/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = react_native_navigation_bootstrap/main.m; sourceTree = "<group>"; };
 		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
+		60FF9EBDB54B4D34BC2E5DC7 /* libReactNativePermissions.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libReactNativePermissions.a; sourceTree = "<group>"; };
+		69F2115B5EE4467E90831715 /* libRNFetchBlob.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNFetchBlob.a; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
+		78C3A6CBD9894925914F609C /* RNFetchBlob.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNFetchBlob.xcodeproj; path = "../node_modules/react-native-fetch-blob/ios/RNFetchBlob.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
+		9ED249FBDB39457F9C5863B3 /* AirMaps.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = AirMaps.xcodeproj; path = "../node_modules/react-native-maps/ios/AirMaps.xcodeproj"; sourceTree = "<group>"; };
 		C00407CB1D8EDB28005B3693 /* ReactNativeControllers.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ReactNativeControllers.xcodeproj; path = "../node_modules/react-native-navigation/ios/ReactNativeControllers.xcodeproj"; sourceTree = "<group>"; };
-		78C3A6CBD9894925914F609C /* RNFetchBlob.xcodeproj */ = {isa = PBXFileReference; name = "RNFetchBlob.xcodeproj"; path = "../node_modules/react-native-fetch-blob/ios/RNFetchBlob.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
-		69F2115B5EE4467E90831715 /* libRNFetchBlob.a */ = {isa = PBXFileReference; name = "libRNFetchBlob.a"; path = "libRNFetchBlob.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
-		EAF891FE0FFA452A999C0391 /* RNImagePicker.xcodeproj */ = {isa = PBXFileReference; name = "RNImagePicker.xcodeproj"; path = "../node_modules/react-native-image-picker/ios/RNImagePicker.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
-		C6696708A24040EBBE738280 /* libRNImagePicker.a */ = {isa = PBXFileReference; name = "libRNImagePicker.a"; path = "libRNImagePicker.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
-		9ED249FBDB39457F9C5863B3 /* AirMaps.xcodeproj */ = {isa = PBXFileReference; name = "AirMaps.xcodeproj"; path = "../node_modules/react-native-maps/ios/AirMaps.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
-		0F6441079ABE4D31A3B68B07 /* libAirMaps.a */ = {isa = PBXFileReference; name = "libAirMaps.a"; path = "libAirMaps.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
-		2B3C11524DC54C1F834437BE /* ReactNativeNavigation.xcodeproj */ = {isa = PBXFileReference; name = "ReactNativeNavigation.xcodeproj"; path = "../node_modules/react-native-navigation/ios/ReactNativeNavigation.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
-		A633F498F8C04C54BCCDC045 /* libReactNativeNavigation.a */ = {isa = PBXFileReference; name = "libReactNativeNavigation.a"; path = "libReactNativeNavigation.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
-		C6FF2A6130D34802B2D08FC2 /* ReactNativePermissions.xcodeproj */ = {isa = PBXFileReference; name = "ReactNativePermissions.xcodeproj"; path = "../node_modules/react-native-permissions/ReactNativePermissions.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
-		60FF9EBDB54B4D34BC2E5DC7 /* libReactNativePermissions.a */ = {isa = PBXFileReference; name = "libReactNativePermissions.a"; path = "libReactNativePermissions.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		C6696708A24040EBBE738280 /* libRNImagePicker.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNImagePicker.a; sourceTree = "<group>"; };
+		C6FF2A6130D34802B2D08FC2 /* ReactNativePermissions.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = ReactNativePermissions.xcodeproj; path = "../node_modules/react-native-permissions/ReactNativePermissions.xcodeproj"; sourceTree = "<group>"; };
+		EAF891FE0FFA452A999C0391 /* RNImagePicker.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNImagePicker.xcodeproj; path = "../node_modules/react-native-image-picker/ios/RNImagePicker.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,7 +205,6 @@
 				63E840E4B4374D7182927970 /* libRNFetchBlob.a in Frameworks */,
 				CCD4871C67EA40CFB5777666 /* libRNImagePicker.a in Frameworks */,
 				6B581334EF0F4EE48AE2B9C7 /* libAirMaps.a in Frameworks */,
-				36ADE743DD9F4FD992222F6E /* libReactNativeNavigation.a in Frameworks */,
 				D550BF4B22414A04AB9C7386 /* libReactNativePermissions.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -282,6 +307,38 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		4E70C2EB1D951236005D181F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4E70C2F01D951236005D181F /* libRNFetchBlob.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4E70C2F11D951236005D181F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4E70C2F51D951236005D181F /* libReactNativePermissions.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4E70C2F61D951236005D181F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4E70C2FA1D951236005D181F /* libAirMaps.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4E70C2FB1D951236005D181F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4E70C2FF1D951236005D181F /* libRNImagePicker.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		78C398B11ACF4ADC00677621 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -307,7 +364,6 @@
 				78C3A6CBD9894925914F609C /* RNFetchBlob.xcodeproj */,
 				EAF891FE0FFA452A999C0391 /* RNImagePicker.xcodeproj */,
 				9ED249FBDB39457F9C5863B3 /* AirMaps.xcodeproj */,
-				2B3C11524DC54C1F834437BE /* ReactNativeNavigation.xcodeproj */,
 				C6FF2A6130D34802B2D08FC2 /* ReactNativePermissions.xcodeproj */,
 			);
 			name = Libraries;
@@ -417,6 +473,10 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
+					ProductGroup = 4E70C2F61D951236005D181F /* Products */;
+					ProjectRef = 9ED249FBDB39457F9C5863B3 /* AirMaps.xcodeproj */;
+				},
+				{
 					ProductGroup = 00C302A81ABCB8CE00DB3ED1 /* Products */;
 					ProjectRef = 00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */;
 				},
@@ -459,6 +519,18 @@
 				{
 					ProductGroup = C00407CC1D8EDB28005B3693 /* Products */;
 					ProjectRef = C00407CB1D8EDB28005B3693 /* ReactNativeControllers.xcodeproj */;
+				},
+				{
+					ProductGroup = 4E70C2F11D951236005D181F /* Products */;
+					ProjectRef = C6FF2A6130D34802B2D08FC2 /* ReactNativePermissions.xcodeproj */;
+				},
+				{
+					ProductGroup = 4E70C2EB1D951236005D181F /* Products */;
+					ProjectRef = 78C3A6CBD9894925914F609C /* RNFetchBlob.xcodeproj */;
+				},
+				{
+					ProductGroup = 4E70C2FB1D951236005D181F /* Products */;
+					ProjectRef = EAF891FE0FFA452A999C0391 /* RNImagePicker.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -524,6 +596,34 @@
 			fileType = archive.ar;
 			path = libReact.a;
 			remoteRef = 146834031AC3E56700842450 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4E70C2F01D951236005D181F /* libRNFetchBlob.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRNFetchBlob.a;
+			remoteRef = 4E70C2EF1D951236005D181F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4E70C2F51D951236005D181F /* libReactNativePermissions.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libReactNativePermissions.a;
+			remoteRef = 4E70C2F41D951236005D181F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4E70C2FA1D951236005D181F /* libAirMaps.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libAirMaps.a;
+			remoteRef = 4E70C2F91D951236005D181F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4E70C2FF1D951236005D181F /* libRNImagePicker.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRNImagePicker.a;
+			remoteRef = 4E70C2FE1D951236005D181F /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		78C398B91ACF4ADC00677621 /* libRCTLinking.a */ = {
@@ -637,8 +737,6 @@
 				INFOPLIST_FILE = react_native_navigation_bootstrapTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/react_native_navigation_bootstrap.app/react_native_navigation_bootstrap";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
@@ -647,6 +745,8 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/react_native_navigation_bootstrap.app/react_native_navigation_bootstrap";
 			};
 			name = Debug;
 		};
@@ -658,8 +758,6 @@
 				INFOPLIST_FILE = react_native_navigation_bootstrapTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/react_native_navigation_bootstrap.app/react_native_navigation_bootstrap";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
@@ -668,6 +766,8 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/react_native_navigation_bootstrap.app/react_native_navigation_bootstrap";
 			};
 			name = Release;
 		};
@@ -681,11 +781,11 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../node_modules/react-native/React/**",
 					"$(SRCROOT)/../node_modules/react-native-controllers/ios/**",
-					"$(SRCROOT)\..\node_modules\react-native-fetch-blob\ios/**",
-					"$(SRCROOT)\..\node_modules\react-native-image-picker\ios/**",
-					"$(SRCROOT)\..\node_modules\react-native-maps\ios\AirMaps/**",
-					"$(SRCROOT)\..\node_modules\react-native-navigation\ios/**",
-					"$(SRCROOT)\..\node_modules\react-native-permissions/**",
+					"$(SRCROOT)..\node_modules\neact-native-fetch-blobios/**",
+					"$(SRCROOT)..\node_modules\neact-native-image-pickerios/**",
+					"$(SRCROOT)..\node_modules\neact-native-mapsiosAirMaps/**",
+					"$(SRCROOT)..\node_modules\neact-native-navigationios/**",
+					"$(SRCROOT)..\node_modules\neact-native-permissions/**",
 				);
 				INFOPLIST_FILE = react_native_navigation_bootstrap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -707,11 +807,11 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../node_modules/react-native/React/**",
 					"$(SRCROOT)/../node_modules/react-native-controllers/ios/**",
-					"$(SRCROOT)\..\node_modules\react-native-fetch-blob\ios/**",
-					"$(SRCROOT)\..\node_modules\react-native-image-picker\ios/**",
-					"$(SRCROOT)\..\node_modules\react-native-maps\ios\AirMaps/**",
-					"$(SRCROOT)\..\node_modules\react-native-navigation\ios/**",
-					"$(SRCROOT)\..\node_modules\react-native-permissions/**",
+					"$(SRCROOT)..\node_modules\neact-native-fetch-blobios/**",
+					"$(SRCROOT)..\node_modules\neact-native-image-pickerios/**",
+					"$(SRCROOT)..\node_modules\neact-native-mapsiosAirMaps/**",
+					"$(SRCROOT)..\node_modules\neact-native-navigationios/**",
+					"$(SRCROOT)..\node_modules\neact-native-permissions/**",
 				);
 				INFOPLIST_FILE = react_native_navigation_bootstrap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -762,11 +862,11 @@
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../node_modules/react-native/React/**",
-					"$(SRCROOT)\..\node_modules\react-native-fetch-blob\ios/**",
-					"$(SRCROOT)\..\node_modules\react-native-image-picker\ios/**",
-					"$(SRCROOT)\..\node_modules\react-native-maps\ios\AirMaps/**",
-					"$(SRCROOT)\..\node_modules\react-native-navigation\ios/**",
-					"$(SRCROOT)\..\node_modules\react-native-permissions/**",
+					"$(SRCROOT)..\node_modules\neact-native-fetch-blobios/**",
+					"$(SRCROOT)..\node_modules\neact-native-image-pickerios/**",
+					"$(SRCROOT)..\node_modules\neact-native-mapsiosAirMaps/**",
+					"$(SRCROOT)..\node_modules\neact-native-navigationios/**",
+					"$(SRCROOT)..\node_modules\neact-native-permissions/**",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
@@ -807,11 +907,11 @@
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../node_modules/react-native/React/**",
-					"$(SRCROOT)\..\node_modules\react-native-fetch-blob\ios/**",
-					"$(SRCROOT)\..\node_modules\react-native-image-picker\ios/**",
-					"$(SRCROOT)\..\node_modules\react-native-maps\ios\AirMaps/**",
-					"$(SRCROOT)\..\node_modules\react-native-navigation\ios/**",
-					"$(SRCROOT)\..\node_modules\react-native-permissions/**",
+					"$(SRCROOT)..\node_modules\neact-native-fetch-blobios/**",
+					"$(SRCROOT)..\node_modules\neact-native-image-pickerios/**",
+					"$(SRCROOT)..\node_modules\neact-native-mapsiosAirMaps/**",
+					"$(SRCROOT)..\node_modules\neact-native-navigationios/**",
+					"$(SRCROOT)..\node_modules\neact-native-permissions/**",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
