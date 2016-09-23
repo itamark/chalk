@@ -19,7 +19,7 @@ class ChatBox extends React.Component{
     };
   }
   componentWillUnmount(){
-    firebaseDb.ref().child(`chats/${this.props.channelId}`).off('value', ref);
+    firebaseDb.ref().child(`chats/${this.props.channelId}`).off('value', this.ref);
   }
   componentDidMount() {
     this.ref = firebaseDb.ref().child(`chats/${this.props.channelId}`).on('value', snap => {

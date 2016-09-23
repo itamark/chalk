@@ -9,10 +9,11 @@ import {
 import {
   CameraKitGallery,
   CameraKitCamera,
+  CameraKitGalleryView,
 } from 'react-native-camera-kit';
 
 
-class ChatBox extends Component{
+export default class ChatBox extends Component{
   constructor(props) {
     super(props);
 
@@ -23,20 +24,25 @@ class ChatBox extends Component{
 
   render() {
     return (
-        <CameraKitCamera
-            ref={(cam) => {
-              this.camera = cam;
-              }
-            }
-            style={{flex: 1, backgroundColor:'white'}}
-            cameraOptions={{
-              flashMode: 'auto',             // on/off/auto(default)
-              focusMode: 'on',               // off/on(default)
-              zoomMode: 'on',                // off/on(default)
-              ratioOverlay:'1:1',            // optional, ratio overlay on the camera and crop the image seamlessly 
-              ratioOverlayColor: '#00000077' // optional
-              }}
-            />
+        <CameraKitGalleryView
+            ref={(gallery) => {
+                  this.gallery = gallery;
+                }}
+            style={{flex:1, margin: 0, backgroundColor: '#ffffff', marginTop: 50}}
+            //albumName={this.state.album}
+            minimumInteritemSpacing={10}
+            minimumLineSpacing={10}
+            columnCount={3}
+            onSelected={(result) => {
+
+        }}
+            fileTypeSupport={{
+                      supportedFileTypes: ['image/png'],
+                      unsupportedOverlayColor: "#00000055",
+                      //unsupportedText: 'JPEG!!',
+                      unsupportedTextColor: '#ff0000'
+          }}
+        />
     )
   }
 }
