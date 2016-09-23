@@ -63,6 +63,18 @@ export default class ChatBox extends Component{
     ,
     {
       avatar: 'https://firebasestorage.googleapis.com/v0/b/chalk-c68a3.appspot.com/o/user-18.png?alt=media&token=9a4a8df5-5fc3-4896-988a-dbedb225ba81'
+    },
+    {
+      avatar: 'https://firebasestorage.googleapis.com/v0/b/chalk-c68a3.appspot.com/o/user-20.png?alt=media&token=092c84ae-5656-4f61-a969-972523aa484f'
+    },
+    {
+      avatar: 'https://firebasestorage.googleapis.com/v0/b/chalk-c68a3.appspot.com/o/user-21.png?alt=media&token=9cd968ef-bc61-45dc-993a-c956b8af9cb7'
+    },
+    {
+      avatar: 'https://firebasestorage.googleapis.com/v0/b/chalk-c68a3.appspot.com/o/user-22.png?alt=media&token=4251690f-d969-49b2-9fa4-ecbe85885206'
+    },
+    {
+      avatar: 'https://firebasestorage.googleapis.com/v0/b/chalk-c68a3.appspot.com/o/user-3.png?alt=media&token=dcb88bcf-fa12-43b0-83bb-21cafde53c44'
     }];
 
     return (
