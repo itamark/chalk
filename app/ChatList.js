@@ -124,7 +124,7 @@ export default class ChatList extends Component {
         geoFire.set(roomId, [position.coords.latitude, position.coords.longitude]);
       },
       (error) => alert(error),
-      {enableHighAccuracy: false, timeout: 10000, maximumAge: 5000000}
+      {enableHighAccuracy: true, timeout: 10000, maximumAge: 5000000}
     );
   }
 
@@ -175,7 +175,7 @@ export default class ChatList extends Component {
           renderRow={(dataRow) => (
             <TouchableOpacity onPress={()=> this.chatItemClick(dataRow) }>
               <View style={{padding:10, borderBottomWidth: StyleSheet.hairlineWidth,
-    borderBottomColor: '#b2b2b2', flexDirection: 'column' }}>
+                  borderBottomColor: '#b2b2b2', flexDirection: 'column' }}>
                 <Text style={{fontSize:20}}>{dataRow.name}</Text><Text style={{fontSize:14}}>{Math.round(dataRow.distance)} mtrs away</Text>
               </View>
             </TouchableOpacity>
