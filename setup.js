@@ -25,7 +25,8 @@ class react_native_navigation_bootstrap extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            name: ''
+            name: '',
+            avatar:'https://firebasestorage.googleapis.com/v0/b/chalk-c68a3.appspot.com/o/user-2.png?alt=media&token=8d32edc1-540e-4306-9aed-ef8b9a2ab3d4'
         };
     }
 
@@ -56,10 +57,11 @@ class react_native_navigation_bootstrap extends Component {
                 <View style={styles.container}>
                     <Image source={require('./source/assets/logo.png')}></Image>
                     <TouchableHighlight onPress={this.choosePicture.bind(this)}>
-                        <Text style={{color: '#ffffff', fontSize:20}}>Choose avatar</Text>
+                      <Image style={{width:80, height:80}} source={{uri: this.state.avatar}}></Image>
+                        
                     </TouchableHighlight>
                     <TextInput placeholder='Enter your nickname'
-                               style={{fontSize:20, padding:4, height: 30, backgroundColor:'#134124', color: '#ffffff', textAlign: 'center'}}
+                               style={{fontSize:20, margin:10, width:300, backgroundColor:'#134124', color: '#ffffff', textAlign: 'center'}}
                                placeholderTextColor="#ffffff" onChangeText={(name) => this.setState({name})}
                                clearTextOnFocus={true}/>
                     <TouchableHighlight style={{backgroundColor:'#ffffff', borderRadius:3, borderWidth:1, padding:4, marginTop:10, flexDirection: 'row',
@@ -102,7 +104,7 @@ class react_native_navigation_bootstrap extends Component {
     default
     setup = () => {
       console.disableYellowBox = true;
-      
+
         Navigation.registerComponent('ChatBox', () => ChatBox);
         Navigation.registerComponent('ChatList', () => ChatList);
         Navigation.registerComponent('CameraPicker', () => CameraPicker);
