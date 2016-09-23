@@ -55,16 +55,16 @@ class react_native_navigation_bootstrap extends Component {
             return (
                 <View style={styles.container}>
                     <Image source={require('./source/assets/logo.png')}></Image>
-                    <TouchableOpacity onPress={this.choosePicture.bind(this)}>
-                        <Text style={{color: 'blue', fontSize:20}}>Choose avatar</Text>
-                    </TouchableOpacity>
-                    <TextInput placeholder='Enter your nick'
+                    <TouchableHighlight onPress={this.choosePicture.bind(this)}>
+                        <Text style={{color: '#ffffff', fontSize:20}}>Choose avatar</Text>
+                    </TouchableHighlight>
+                    <TextInput placeholder='Enter your nickname'
                                style={{fontSize:20, padding:4, height: 30, backgroundColor:'#134124', color: '#ffffff', textAlign: 'center'}}
                                placeholderTextColor="#ffffff" onChangeText={(name) => this.setState({name})}
                                clearTextOnFocus={true}/>
                     <TouchableHighlight style={{backgroundColor:'#ffffff', borderRadius:3, borderWidth:1, padding:4, marginTop:10, flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center'}} activeOpacity={this.state.name =='' ? 1 : 0.7} onPress={this.showChats.bind(this)}>
+                        justifyContent: 'center',
+                        alignItems: 'center'}} activeOpacity={this.state.name =='' ? 1 : 0.7} onPress={this.showChats.bind(this)}>
                         <Text style={{color: 'blue', fontSize:15, color:'#134124'}}>Lets Chalk!</Text>
                     </TouchableHighlight>
                 </View>
@@ -80,7 +80,8 @@ class react_native_navigation_bootstrap extends Component {
             padding: 5,
             justifyContent: 'center',
             alignItems: 'center',
-            backgroundColor: '#134124'
+            backgroundColor: '#134124',
+            flexDirection: 'column'
         },
         text: {
             color: '#ffffff'
