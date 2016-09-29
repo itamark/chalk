@@ -61,7 +61,7 @@ class react_native_navigation_bootstrap extends Component {
                         
                     </TouchableHighlight>
                     <TextInput placeholder='Enter your nickname'
-                               style={{fontSize:20, margin:10, width:300, backgroundColor:'#134124', color: '#ffffff', textAlign: 'center'}}
+                               style={{fontSize:20, height:50, width:300, backgroundColor:'#134124', color: '#ffffff', textAlign: 'center'}}
                                placeholderTextColor="#ffffff" onChangeText={(name) => this.setState({name})}
                                clearTextOnFocus={true}/>
                     <TouchableHighlight style={{backgroundColor:'#ffffff', borderRadius:3, borderWidth:1, padding:4, marginTop:10, flexDirection: 'row',
